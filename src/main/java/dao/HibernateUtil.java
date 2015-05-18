@@ -32,7 +32,6 @@ public class HibernateUtil {
         }
     }
 
-    @Produces
     public static EntityManagerFactory getEntityManagerFactory() {
         return emf;
     }
@@ -46,15 +45,6 @@ public class HibernateUtil {
         System.out.println("Closing EM");
         try {
             em.close();
-        } catch (Throwable t) {
-            t.printStackTrace();
-        }
-    }
-
-    public static void closeEntityManagerFactory(
-            @Disposes EntityManagerFactory emf) {
-        System.out.println("Closing EMF");
-        try {
             emf.close();
         } catch (Throwable t) {
             t.printStackTrace();

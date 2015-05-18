@@ -1,5 +1,7 @@
 package app;
 
+import dao.HibernateUtil;
+
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
@@ -14,7 +16,6 @@ public class DemoApplication {
             t.printStackTrace();
         } finally {
             em.getTransaction().rollback();
-            em.close();
         }
     }
 }
