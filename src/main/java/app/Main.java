@@ -8,9 +8,7 @@ public class Main {
     public static void main(String[] args) {
         // Initialize weld-se and run main application
         final Weld weld = new Weld()
-                .enableDiscovery()
-                .addPackage(false, HibernateUtil.class)
-                .addPackage(false, DemoApplication.class);;
+                .enableDiscovery();
         final WeldContainer cdiContainer = weld.initialize();
 
         final DemoApplication app = cdiContainer

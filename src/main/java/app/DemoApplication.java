@@ -1,12 +1,13 @@
 package app;
 
-import dao.HibernateUtil;
-
 import javax.inject.Inject;
+import javax.inject.Singleton;
 import javax.persistence.EntityManager;
 
+@Singleton
 public class DemoApplication {
-    @Inject private EntityManager em;
+    @Inject
+    private EntityManager em;
 
     public void run() {
         try {

@@ -2,6 +2,7 @@ package dao;
 
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
+import javax.inject.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -16,6 +17,7 @@ import javax.persistence.Persistence;
  * the container using the {@link javax.persistence.PersistenceContext}
  * annotation.
  */
+@Singleton
 public class HibernateUtil {
     private static final EntityManagerFactory emf = buildEntityManagerFactory();
 
