@@ -1,22 +1,18 @@
 package app;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
-import javax.persistence.EntityManager;
 
-@Singleton
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import javax.inject.Inject;
+
 public class DemoApplication {
+    private static final Logger LOGGER = LogManager.getLogger(HelloWorld.class.getName());
+
     @Inject
-    private EntityManager em;
+    private HelloWorld helloWorld;
 
     public void run() {
-        try {
-            em.getTransaction().begin();
-            System.out.println("Inside transaction");
-        } catch (Throwable t) {
-            t.printStackTrace();
-        } finally {
-            em.getTransaction().rollback();
-        }
+            LOGGER.info(helloWorld.doSalute());
     }
 }

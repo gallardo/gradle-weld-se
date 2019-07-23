@@ -1,6 +1,5 @@
 package app;
 
-import dao.HibernateUtil;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 
